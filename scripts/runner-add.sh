@@ -119,9 +119,14 @@ ExecStart=$RUNNER_DIR/run.sh
 WorkingDirectory=$RUNNER_DIR
 Restart=always
 RestartSec=5
-MemoryHigh=2G
-MemoryMax=4G
-CPUQuota=200%
+MemoryHigh=6G
+MemoryMax=8G
+CPUQuota=400%
+# Gradle + JVM heap — Android builds need 4-6G headroom; tighter caps OOM
+# the Gradle daemon mid-build. Operator can override per-runner via systemd
+# drop-ins if they want different limits.
+Environment=GRADLE_OPTS=-Xmx6g -Dorg.gradle.jvmargs=-Xmx6g -XX:MaxMetaspaceSize=1g
+Environment=JAVA_TOOL_OPTIONS=-Xmx6g
 # Per-runner Gradle home — prevents lock collision when two builds run in parallel.
 Environment=GRADLE_USER_HOME=\$HOME/.gradle-runner-${IDX}
 # Shared tool cache so setup-python finds the pre-installed Python.
