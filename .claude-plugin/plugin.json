@@ -1,16 +1,9 @@
 {
   "name": "runner-pool",
   "version": "0.1.0",
-  "description": "Orchestrate GitHub Actions self-hosted runners across any host. Add/list/remove/status from any repo, any count, local or remote.",
-  "author": "deucebucket",
-  "license": "MIT",
-  "commands": [
-    "commands/runner-add.md",
-    "commands/runner-list.md",
-    "commands/runner-remove.md",
-    "commands/runner-status.md"
-  ],
-  "skills": [
-    "skills/runner-orchestration.md"
-  ]
+  "description": "Orchestrate GitHub Actions self-hosted runners across any host. Add/list/remove/status/autoscale from any repo, any count, local or remote.",
+  "author": {
+    "name": "deucebucket"
+  },
+  "license": "MIT"
 }
