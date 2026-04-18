@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "runner-pool",
+  "description": "Single-plugin marketplace for runner-pool — orchestrate self-hosted GitHub Actions runners across any host.",
+  "owner": {
+    "name": "deucebucket",
+    "email": "jerrymares@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "runner-pool",
+      "description": "Add/list/remove/status/autoscale GitHub Actions self-hosted runners across any host.",
+      "category": "devops",
+      "source": ".",
+      "homepage": "https://github.com/deucebucket/runner-pool"
+    }
+  ]
+}
