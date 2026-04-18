@@ -11,7 +11,10 @@
       "name": "runner-pool",
       "description": "Add/list/remove/status/autoscale GitHub Actions self-hosted runners across any host.",
       "category": "devops",
-      "source": ".",
+      "source": {
+        "source": "github",
+        "repo": "deucebucket/runner-pool"
+      },
       "homepage": "https://github.com/deucebucket/runner-pool"
     }
   ]
