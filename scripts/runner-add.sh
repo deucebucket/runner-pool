@@ -128,6 +128,10 @@ Environment=GRADLE_USER_HOME=\$HOME/.gradle-runner-${IDX}
 # (Operator: pre-populate \$HOME/runner-tool-cache/Python/<ver>/x64 once before launching the pool.)
 Environment=RUNNER_TOOL_CACHE=\$HOME/runner-tool-cache
 Environment=AGENT_TOOLSDIRECTORY=\$HOME/runner-tool-cache
+# Reuse pre-installed Android SDK if the operator has set ANDROID_HOME at the
+# shell level (\$HOME/.bash_profile etc). Falls back to setup-android downloading
+# fresh if the path doesn't exist.
+EnvironmentFile=-${HOME}/.android-sdk-env
 
 [Install]
 WantedBy=default.target
