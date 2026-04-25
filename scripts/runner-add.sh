@@ -133,6 +133,10 @@ Environment=GRADLE_USER_HOME=\$HOME/.gradle-runner-${IDX}
 # (Operator: pre-populate \$HOME/runner-tool-cache/Python/<ver>/x64 once before launching the pool.)
 Environment=RUNNER_TOOL_CACHE=\$HOME/runner-tool-cache
 Environment=AGENT_TOOLSDIRECTORY=\$HOME/runner-tool-cache
+# Per-runner Playwright test ports — each runner gets a unique pair so
+# parallel E2E runs don't fight over the same port.
+Environment=SCRITHUB_TEST_BACKEND_PORT=$((8660 + IDX))
+Environment=SCRITHUB_TEST_FRONTEND_PORT=$((3060 + IDX))
 # Reuse pre-installed Android SDK if the operator has set ANDROID_HOME at the
 # shell level (\$HOME/.bash_profile etc). Falls back to setup-android downloading
 # fresh if the path doesn't exist.
